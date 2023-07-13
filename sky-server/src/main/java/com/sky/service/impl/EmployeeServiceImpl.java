@@ -1,10 +1,6 @@
 package com.sky.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sky.constant.MessageConstant;
 import com.sky.constant.PasswordConstant;
@@ -110,30 +106,30 @@ public class EmployeeServiceImpl implements EmployeeService {
 //     * @param employeePageQueryDTO
      * @return
      */
-//    @Override
-//    public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
-//        //开始分页查询
-//        PageHelper.startPage(employeePageQueryDTO.getPage(),employeePageQueryDTO.getPageSize());
-//
-//        Page<Employee> page = employeeMapper.pageQuery(employeePageQueryDTO);
-//        long total = page.getTotal();
-//        List<Employee> result = page.getResult();
-//        return new PageResult(total,result);
-//    }
+    @Override
+    public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
+        //开始分页查询
+        PageHelper.startPage(employeePageQueryDTO.getPage(),employeePageQueryDTO.getPageSize());
 
-    public IPage<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
-        IPage page = new Page(employeePageQueryDTO.getPage(),employeePageQueryDTO.getPageSize());
-        if(employeePageQueryDTO.getName()!=null && employeePageQueryDTO.getName() != "null"){
-            QueryWrapper<Employee> wrapper = new QueryWrapper<>();
-            wrapper.like("name",employeePageQueryDTO.getName());
-
-            employeeMapper.selectPage(page,wrapper);
-        }
-        else{
-            employeeMapper.selectPage(page,null);
-        }
-        return page;
+        Page<Employee> page = employeeMapper.pageQuery(employeePageQueryDTO);
+        long total = page.getTotal();
+        List<Employee> result = page.getResult();
+        return new PageResult(total,result);
     }
+
+//    public IPage<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
+//        IPage page = new Page(employeePageQueryDTO.getPage(),employeePageQueryDTO.getPageSize());
+//        if(employeePageQueryDTO.getName()!=null && employeePageQueryDTO.getName() != "null"){
+//            QueryWrapper<Employee> wrapper = new QueryWrapper<>();
+//            wrapper.like("name",employeePageQueryDTO.getName());
+//
+//            employeeMapper.selectPage(page,wrapper);
+//        }
+//        else{
+//            employeeMapper.selectPage(page,null);
+//        }
+//        return page;
+//    }
 
     /**
      * 启用禁用员工
@@ -154,12 +150,12 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @param id
      * @return
      */
-    @Override
-    public Employee SelectById(Long id) {
-        Employee employee = employeeMapper.selectById(id);
-        employee.setPassword("****");
-        return employee;
-    }
+//    @Override
+//    public Employee SelectById(Long id) {
+//        Employee employee = employeeMapper.selectById(id);
+//        employee.setPassword("****");
+//        return employee;
+//    }
 
     @Override
     public Employee getById(Long id) {

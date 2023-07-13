@@ -1,6 +1,5 @@
 package com.sky.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
 import com.sky.dto.EmployeePageQueryDTO;
@@ -27,8 +26,8 @@ public interface EmployeeService {
      * @param employeePageQueryDTO
      * @return
      */
-//    PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
-    IPage<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+    PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+//    IPage<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 
     /**
      * 启用禁用
@@ -42,7 +41,7 @@ public interface EmployeeService {
      * @param id
      * @return
      */
-    Employee SelectById(Long id);
+//    Employee SelectById(Long id);
 
     Employee getById(Long id);
 
