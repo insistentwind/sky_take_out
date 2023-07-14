@@ -6,3 +6,9 @@ sky:
     database: sky_take_out
     username: root
     password: xiandan*19780815
+
+  alioss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: LTAI5tJKucGDTSptHqUMaNm6
+    access-key-secret: SImboVg8yt9x1oEZRZZGkgxkkD9QjO
+    bucket-name: insistentwind
