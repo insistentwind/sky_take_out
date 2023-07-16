@@ -12,3 +12,7 @@ sky:
     access-key-id: LTAI5tJKucGDTSptHqUMaNm6
     access-key-secret: SImboVg8yt9x1oEZRZZGkgxkkD9QjO
     bucket-name: insistentwind
+  redis:
+    host: localhost
+    port: 6379
+    database: 10
