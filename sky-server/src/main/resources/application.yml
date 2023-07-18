@@ -55,6 +55,15 @@ sky:
     # 设置前端传递过来的令牌名称
     admin-token-name: token
 
+    user-secret-key:  itheima
+
+    user-token-name:  authentication
+
+    user-ttl: 72000000000
+  #微信设置小程序的appid和secret
+  wechat:
+    appid: ${sky.wechat.appid}
+    secret: ${sky.wechat.secret}
 
 mybatis-plus:
   global-config:

@@ -77,4 +77,9 @@ public interface DishMapper {
      * @return
      */
     List<Dish> findByCategoryId(Dish dish);
+
+    /**
+     * 动态条件查询菜品数据
+     */
+    List<Dish> list(Dish dish);
 }
