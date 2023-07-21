@@ -45,6 +45,21 @@ sky:
     access-key-id: ${sky.alioss.access-key-id}
     access-key-secret: ${sky.alioss.access-key-secret}
     bucket-name:  ${sky.alioss.bucket-name}
+  wechat:
+    appid: ${sky.wechat.appid}
+    secret: ${sky.wechat.secret}
+    mchid : ${sky.wechat.mchid}
+    mchSerialNo: ${sky.wechat.mchSerialNo}
+    privateKeyFilePath: ${sky.wechat.privateKeyFilePath}
+    apiV3Key: ${sky.wechat.apiV3Key}
+    weChatPayCertFilePath: ${sky.wechat.weChatPayCertFilePath}
+    notifyUrl: ${sky.wechat.notifyUrl}
+    refundNotifyUrl: ${sky.wechat.refundNotifyUrl}
+  shop:
+    address: 河南省安阳市滑县开元盛世小区
+#    address: 北京市海淀区上地十街10号
+  baidu:
+    ak: IwrmzIzCsgtgBFLnTMbRQX4V54Teb4qN
 
 
   jwt:
@@ -61,9 +76,6 @@ sky:
 
     user-ttl: 72000000000
   #微信设置小程序的appid和secret
-  wechat:
-    appid: ${sky.wechat.appid}
-    secret: ${sky.wechat.secret}
 
 mybatis-plus:
   global-config:
