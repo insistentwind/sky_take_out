@@ -61,6 +61,7 @@ public class OrderController {
     @GetMapping("/reminder/{id}")
     public Result reminder (@PathVariable Integer id){
         log.info("顾客催单：{}",id);
+        orderService.reminder(id);
         return Result.success();
     }
     /**
