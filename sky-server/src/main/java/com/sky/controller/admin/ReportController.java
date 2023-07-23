@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -75,7 +76,12 @@ public class ReportController {
         OrderReportVO orderReportVO = reportService.getOrderStatistics(begin,end);
         return Result.success(orderReportVO);
     }
-
+    /**
+     * 销量排名统计top10
+     * @param begin
+     * @param end
+     * @return
+     */
     @GetMapping("/top10")
     @ApiOperation("销量排名统计")
     public Result<SalesTop10ReportVO> Top10Statistics(
@@ -86,4 +92,16 @@ public class ReportController {
         SalesTop10ReportVO salesTop10ReportVO = reportService.getSalesTop10(begin,end);
         return Result.success(salesTop10ReportVO);
     }
+
+    /**
+     * 导出最近30天的数据
+     * @param response
+     */
+    @ApiOperation("导出最近30天的数据")
+    @GetMapping("/export")
+    public void export(HttpServletResponse response){
+        log.info("导出最近30天的数据:{}",response);
+        reportService.exportBuisinessData(response);
+    }
+
 }
